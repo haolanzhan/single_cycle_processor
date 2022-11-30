@@ -1,2 +1,7 @@
 # single_cycle_processor
-So cool project
+
+Instruction Datapath/Fetch: Kinsey
+Control: Haolan
+Execution Datapath: Peizhi 
+
+
