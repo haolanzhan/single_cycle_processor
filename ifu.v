@@ -12,10 +12,10 @@ module instruction_fetch_unit(pc, imm16, branch, zero) // pc needs to be passed 
 
     assign one = 30'b1;
 
-    full_adder_32 increment_pc(pc, one, increment_pc_out);
+    full_adder_30 increment_pc(pc, one, increment_pc_out);
     sign_ext_30 ext(imm16, ext_imm16);
 
-    full_adder_32 pc_immediate(pc, ext_imm16, pc_immediate_out);
+    full_adder_30 pc_immediate(pc, ext_imm16, pc_immediate_out);
 
     assign [29:0] pc_selector = 30'h00000000;
     and_gate branch_or_zero(branch, zero, pc_selector[0]);

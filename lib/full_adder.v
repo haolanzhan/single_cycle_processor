@@ -1,4 +1,8 @@
 `timescale 1ns/10ps
+`include "lib/xor_gate.v"
+`include "lib/and_gate.v"
+`include "lib/or_gate.v"
+
 
 module full_adder(a, b, cin, cout, s);
     input a, b, cin;

@@ -1,0 +1,8 @@
+lib/full_adder.v
+/home/kph3798/ce361/single_cycle_processor/lib/full_adder.v
+lib/xor_gate.v
+/home/kph3798/ce361/single_cycle_processor/lib/xor_gate.v
+lib/and_gate.v
+/home/kph3798/ce361/single_cycle_processor/lib/and_gate.v
+lib/or_gate.v
+/home/kph3798/ce361/single_cycle_processor/lib/or_gate.v
