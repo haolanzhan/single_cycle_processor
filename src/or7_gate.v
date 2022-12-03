@@ -21,5 +21,5 @@ module or7_gate(a, b, c, d, e, f, g, out);
 
 	or_gate l3_0(l2temp0, l1temp2, l3temp0);
 
-	or_gate l4_0(l4temp0, g, out);
+	or_gate l4_0(l3temp0, g, out);
 endmodule

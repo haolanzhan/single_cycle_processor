@@ -52,10 +52,10 @@ module alu_control(ALUop, func, ALUctr);
 
 	and8_gate aluctr1_0 (ALUop[1], ALUop_not[0], func[5], func_not[4], func_not[3], func_not[2], func_not[1], func_not[0], add_op_func); 
 	and8_gate aluctr1_1 (ALUop[1], ALUop_not[0], func[5], func_not[4], func_not[3], func_not[2], func_not[1], func[0], addu_op_func); 
-	and_gate aluctr1_5 (ALUop_not[1], ALUop_not[0], i_add_op); 
-	or7_gate aluctr1_6 (add_op_func, addu_op_func, sub_op_func, subu_op_func, slt_op_func, i_add_op, i_sub_op, ALUctr[1]); //ALUctr[1]
+	and_gate aluctr1_2 (ALUop_not[1], ALUop_not[0], i_add_op); 
+	or7_gate aluctr1_3 (add_op_func, addu_op_func, sub_op_func, subu_op_func, slt_op_func, i_add_op, i_sub_op, ALUctr[1]); //ALUctr[1]
 
 	and8_gate aluctr0_0 (ALUop[1], ALUop_not[0], func[5], func_not[4], func_not[3], func[2], func_not[1], func[0], or_op_func);
-	or3_gate aluctr0_1 (or_op_func, slt_op_func, sltu_op_func, ALUctr[0]) //ALUctr[0]
+	or3_gate aluctr0_1 (or_op_func, slt_op_func, sltu_op_func, ALUctr[0]); //ALUctr[0]
 
 endmodule
