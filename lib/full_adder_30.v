@@ -2,14 +2,15 @@
 `include "lib/full_adder.v"
 
 
-module full_adder_30(a, b, s);
+module full_adder_30(a, b, c, s);
 
     input	[29:0] 	a; // takes <31:2> 
 	input	[29:0] 	b;
+    input c;
     output [29:0] s;
 
     wire [29:0] carries;
-    full_adder lsb(a[0], b[0], 0, carries[0], s[0]);
+    full_adder lsb(a[0], b[0], c, carries[0], s[0]);
     genvar i;
     generate
         for(i = 1; i < 29; i = i + 1) begin

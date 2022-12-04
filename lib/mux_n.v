@@ -1,5 +1,5 @@
 module mux_n (sel, src0, src1, z);
-  parameter n=1;
+  parameter n=30;
   input [n-1:0] sel;
   input [n-1:0] src0;
   input [n-1:0] src1;

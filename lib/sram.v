@@ -1,6 +1,6 @@
 module sram(cs,oe,we,addr,din,dout);
   
-  parameter mem_file="";
+  parameter mem_file="eecs361/data/bills_branch.dat";
   input cs;
   input oe;
   input we;
@@ -185,7 +185,7 @@ module sram(cs,oe,we,addr,din,dout);
         end
         if (oe==1) begin
           readRAM(addr , dbuf);
-          $display("Writing to dout: " , dbuf);
+          $display("Writing to dout: %h" , dbuf);
           dout = dbuf;
         end
      end

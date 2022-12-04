@@ -2,5 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/kph3798/ce361/single_cycle_processor/lib/full_adder_30.v
-/home/kph3798/ce361/single_cycle_processor/full_adder_30_test.v
+/home/kph3798/ce361/single_cycle_processor/instruction_fetch.v
+/home/kph3798/ce361/single_cycle_processor/instr_fetch_test.v
