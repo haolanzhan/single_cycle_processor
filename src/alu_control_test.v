@@ -5,10 +5,10 @@ module alu_control_test;
 	reg [5:0] func_tb;
 	wire [3:0] ALUctr_tb;
 
-    initial $monitor ("ALUop_tb: %b func_tb_tb: %b ALUctr_tb: %b", 
+    initial $monitor ("ALUop_tb: %b func_tb: %b ALUctr_tb: %b", 
                     ALUop_tb, func_tb, ALUctr_tb);
 	 
-	alu_control alu_control(ALUop_tb, func_tb, ALUctr_tb);
+	alu_control dut(ALUop_tb, func_tb, ALUctr_tb);
 
 	initial 
 		begin
@@ -75,14 +75,9 @@ module alu_control_test;
 			#10
 
 			$display("--------------------------------------------");
-			$display("beq, bne instruction (I-type using sub)");
+			$display("beq, bne, bgtz instruction (I-type using sub)");
 			ALUop_tb = 2'b01;
 			#10
-
-			$display("--------------------------------------------");
-			$display("beq, bne, bgtz instruction (I-type using sub)");
-			ALUop_tb = 2'b11;
-
             #20 $finish;
 			
 	end 
