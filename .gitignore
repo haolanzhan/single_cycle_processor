@@ -1,3 +1,6 @@
 xcelium.d/
 *.history
 *.log
+.simvision/
+waves.shm/
+xrun.key
