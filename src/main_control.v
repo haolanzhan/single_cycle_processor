@@ -9,20 +9,18 @@
 `include "or3_gate.v"
 `include "and3_gate.v"
 
-
-module main_control(Opcode, Zero, AluResMsb, nPC_sel, RegWr, RegDst, ExtOp AluSrc, AluOp, MemWr, MemtoReg, Branch);
+module main_control(Opcode, Zero, AluResMsb, nPC_sel, RegWr, RegDst, ExtOp, AluSrc, AluOp, MemWr, MemtoReg, Branch);
 	//inputs
   	input [5:0] Opcode; 
   	input Zero, AluResMsb;
 
 	//output
  	output [1:0] AluOp; 
-  	output nPC_sel, RegWr, RegDst, ExtOp, AluSrc, AluOp, MemWr, MemtoReg, Branch;
+  	output nPC_sel, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, Branch;
 
 	wire [5:0] Opcode_not; 
   	wire r_type, addi, lw, sw, beq, bne, bgtz; 
 	wire beq_branch_flag, bne_branch_flag, bgtz_branch_flag, Zero_not, AluResMsb_not;
-
 
   	//inverse of opcode
 	not_gate op_0 (Opcode[0], Opcode_not[0]);
@@ -53,9 +51,9 @@ module main_control(Opcode, Zero, AluResMsb, nPC_sel, RegWr, RegDst, ExtOp AluSr
 	or3_gate Branch_or (beq, bne, bgtz, Branch); //branch output
 
 	//calculate nPC_Sel independently
-	and_gate beq_and_zero (beq, zero, beq_branch_flag); //this instruction is beq, and the condition passes so we must branch
+	and_gate beq_and_zero (beq, Zero, beq_branch_flag); //this instruction is beq, and the condition passes so we must branch
 	not_gate not_zero (Zero, Zero_not); //result from subtraction is not zero 
-	and_gate bne_and_not_zero (beq, Zero_not, bne_branch_flag); //this instruction is bne, and the condition passes so we must branch
+	and_gate bne_and_not_zero (bne, Zero_not, bne_branch_flag); //this instruction is bne, and the condition passes so we must branch
 	not_gate not_AluResMsb (AluResMsb, AluResMsb_not); //result from subtraction has a 0 MSB (thus positive) 
 	and3_gate bgtz_and_not_zero_and_pos (bgtz, Zero_not, AluResMsb_not, bgtz_branch_flag); //this instruction is bngz, and the condition passes so we must branch
 	or3_gate nPC_sel_or (beq_branch_flag, bne_branch_flag, bgtz_branch_flag, nPC_sel); //npc_sel output
