@@ -1,19 +1,19 @@
 `timescale 1ns/10ps
 
-`include "instruction_fetch.v"
-`include "main_control.v"
-`include "alu_controle.v"
-`include "datapath.v"
+`include "src/instruction_fetch.v"
+`include "src/main_control.v"
+`include "src/alu_control.v"
+`include "src/datapath.v"
 
 module processor (clk, start_up);
   	parameter program1 = ""; //program
-	input clk, startup;
+	input clk, start_up;
 
 	//Control signals for ifetch (control unit->instruction fetch)
 	wire nPC_sel, Branch;
 
 	//Control signals for datapath (control unit->datapath)
-	wire RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr, 
+	wire RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr;
 
 	//feedback signals for control path (datapath->control unit)
 	wire zero, msb;
@@ -33,5 +33,5 @@ module processor (clk, start_up);
 	alu_control aluctrl(AluOp, /*func*/instruction[5:0], ALUctr);
 
 	//instantiate datapath (in: clk ... ALUctr; out: zero, msb)
-	datapath dpath (clk, instruction, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr, zero, msb);
+	datapath #(.file(program1)) dpath (clk, instruction, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr, zero, msb);
 endmodule

@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-`include "../lib/mux_n.v"
+`include "lib/mux_n.v"
 
 module ext_16_32 (sel, in, out);
     input           sel;

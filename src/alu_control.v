@@ -1,14 +1,14 @@
 `timescale 1ns/10ps
 
-`include "../lib/and_gate.v"
-`include "../lib/or_gate.v"
-`include "../lib/xor_gate.v"
-`include "../lib/mux.v"
-`include "../lib/not_gate.v"
-`include "and8_gate.v"
-`include "or5_gate.v"
-`include "or7_gate.v"
-`include "or3_gate.v"
+`include "lib/and_gate.v"
+`include "lib/or_gate.v"
+`include "lib/xor_gate.v"
+`include "lib/mux.v"
+`include "lib/not_gate.v"
+`include "src/and8_gate.v"
+`include "src/or5_gate.v"
+`include "src/or7_gate.v"
+`include "src/or3_gate.v"
 
 
 module alu_control(ALUop, func, ALUctr, SllFlag);

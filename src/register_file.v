@@ -1,10 +1,10 @@
 `timescale 1ns/10ps
 
-`include "../lib/and_gate.v"
-`include "../lib/dec_n.v"
+`include "lib/and_gate.v"
+`include "lib/dec_n.v"
 
-`include "mux_32_32.v"
-`include "register.v"
+`include "src/mux_32_32.v"
+`include "src/register.v"
 
 
 // 32, 32-bit registers
