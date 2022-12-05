@@ -4,7 +4,7 @@
 `include "lib/or_gate.v"
 
 
-module full_adder(a, b, cin, cout, s);
+module full_adder1(a, b, cin, cout, s);
     input a, b, cin;
     output cout, s;
     wire w1, w2, w3, w4;
