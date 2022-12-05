@@ -25,7 +25,7 @@ module processor_test;
 			$display("Reseting to initial PC value");
 			clk_tb = 0;
         	start_up_tb = 1;
-			#5;
+			#15;
 
 			$display("Beginning program, running for at least 10 cycles");
 			start_up_tb = 0;

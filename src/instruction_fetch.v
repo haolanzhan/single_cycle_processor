@@ -33,7 +33,7 @@ module instruction_fetch(start_up, clk, npc_sel, instruction, new_pc_out);
     genvar i;
     generate
         for (i = 2; i < 32; i = i + 1) begin
-            dffr pc(clk, d[i], q[i]);
+            dff pc(clk, d[i], q[i]);
         end
     endgenerate
 
