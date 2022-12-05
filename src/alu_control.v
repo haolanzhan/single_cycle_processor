@@ -11,7 +11,7 @@
 `include "or3_gate.v"
 
 
-module alu_control(ALUop, func, ALUctr);
+module alu_control(ALUop, func, ALUctr, SllFlag);
 
 	//inputs
 	input [1:0] ALUop; //signal from main control unit. R-type: 10, I-type add: 00, I-type sub: 01 
@@ -19,6 +19,7 @@ module alu_control(ALUop, func, ALUctr);
 
 	//output
 	output [3:0] ALUctr; //control signal to ALU
+	output SllFlag; //flag set to 1 if this instruction is a sll
 
 	wire [1:0] ALUop_not; 
 	wire [5:0] func_not; 
@@ -37,7 +38,7 @@ module alu_control(ALUop, func, ALUctr);
 	not_gate func_inv4 (func[4], func_not[4]);
 	not_gate func_inv5 (func[5], func_not[5]);
 
-	//produce outputs 
+	//produce ALUctr output 
 	and8_gate aluctr3_0 (ALUop[1], ALUop_not[0], func_not[5], func_not[4], func_not[3], func_not[2], func_not[1], func_not[0], ALUctr[3]); //ALUctr[3] 
 
 	and8_gate aluctr2_0 (ALUop[1], ALUop_not[0], func[5], func_not[4], func_not[3], func_not[2], func[1], func_not[0], sub_op_func);
@@ -54,4 +55,8 @@ module alu_control(ALUop, func, ALUctr);
 
 	and8_gate aluctr0_0 (ALUop[1], ALUop_not[0], func[5], func_not[4], func_not[3], func[2], func_not[1], func[0], or_op_func);
 	or3_gate aluctr0_1 (or_op_func, slt_op_func, sltu_op_func, ALUctr[0]); //ALUctr[0]
+
+	//produce SllFlag output
+	and8_gate sllflag_0 (ALUop[1], ALUop_not[0], func_not[5], func_not[4], func_not[3], func_not[2], func_not[1], func_not[0], SllFlag); //SllFlag
+
 endmodule
