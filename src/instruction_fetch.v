@@ -1,10 +1,10 @@
 `timescale 1ns/10ps
-`include "lib/full_adder_30.v"
-`include "lib/dffr.v"
-`include "lib/sram.v"
+`include "../lib/full_adder_30.v"
+`include "../lib/dffr.v"
+`include "../lib/sram.v"
 
-module instruction_fetch(start_pc, start_up, clk, npc_sel, instruction); 
-    input [31:0] start_pc;
+module instruction_fetch(start_up, clk, npc_sel, instruction); 
+    parameter program2 = "";
     input start_up, clk, npc_sel;
     output [31:0] instruction;
 
@@ -45,7 +45,7 @@ module instruction_fetch(start_pc, start_up, clk, npc_sel, instruction);
     mux_n #(.n(30)) seq_or_branch(pc_selector, 30'h00000000, ext_imm16, mux_output[29:0]);
 
     full_adder_30 add(q[31:2], mux_output[29:0], 1'b1, new_pc[31:2]);
-    sram instr_mem(1'b1, 1'b1, 1'b0, q[31:0], 32'b0, instruction);
+    sram #(.mem_file(program2)) (1'b1, 1'b1, 1'b0, q[31:0], 32'b0, instruction);
     
     assign imm16 = instruction[15:0];
 

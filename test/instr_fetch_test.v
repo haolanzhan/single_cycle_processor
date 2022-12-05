@@ -12,12 +12,11 @@ module instr_fetch_test;
     
     always #5 clk = ~clk;
 
-    instruction_fetch ifu(pc, start_up, clk, npc_sel, instruction);
+    instruction_fetch #(.program2("../eecs361/bills_branch.dat")) ifu(start_up, clk, npc_sel, instruction);
 
     initial begin
         clk = 0;
         start_up = 1;
-        pc = 32'h00400020;
         // imm16 = 16'b0;
         npc_sel = 0;
 
