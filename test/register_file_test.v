@@ -8,11 +8,11 @@ module register_file_test;
 	wire	[31:0]	outa, outb, decode;
 
 
-    register_file reg_file (clk, regwr, rd, ra, rb, data, outa, outb, decode);
+    register_file reg_file (clk, regwr, rd, ra, rb, data, outa, outb);
 
-	initial $monitor ("clk: %d, wenb: %d, rd (write): %d, ra (read): %d, rb (read): %d, data: %d     outa: %d, outb: %d, decode: %b", 
+	initial $monitor ("clk: %d, wenb: %d, rd (write): %d, ra (read): %d, rb (read): %d, data: %d     outa: %d, outb: %d", 
                         clk, regwr, rd, ra, rb, data,
-                        outa, outb, decode);
+                        outa, outb);
 
 	integer i;
 
