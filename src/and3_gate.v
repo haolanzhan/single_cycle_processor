@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-`include "../lib/and_gate.v"
+`include "lib/and_gate.v"
 
 module and3_gate(a, b, c, out);
 

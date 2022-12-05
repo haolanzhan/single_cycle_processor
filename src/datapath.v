@@ -1,12 +1,12 @@
 `timescale 1ns/10ps
 
-`include "../lib/mux_n.v"
-`include "../lib/syncram.v"
-`include "../lib/not_gate_32.v"
+`include "lib/mux_n.v"
+`include "lib/syncram.v"
+`include "lib/not_gate_32.v"
 
-`include "alu.v"
-`include "ext_16_32.v"
-`include "register_file.v"
+`include "src/alu.v"
+`include "src/ext_16_32.v"
+`include "src/register_file.v"
 
 
 module datapath (

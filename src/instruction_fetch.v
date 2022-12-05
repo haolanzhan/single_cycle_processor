@@ -2,6 +2,7 @@
 `include "lib/full_adder_30.v"
 `include "lib/dffr.v"
 `include "lib/sram.v"
+`include "lib/sign_ext_30.v"
 
 module instruction_fetch(start_up, clk, npc_sel, instruction); 
     parameter program2 = "";

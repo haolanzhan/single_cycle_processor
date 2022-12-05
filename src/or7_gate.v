@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-`include "../lib/or_gate.v"
+`include "lib/or_gate.v"
 
 module or7_gate(a, b, c, d, e, f, g, out);
 

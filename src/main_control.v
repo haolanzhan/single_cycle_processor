@@ -1,13 +1,13 @@
 `timescale 1ns/10ps
 
-`include "../lib/and_gate.v"
-`include "../lib/or_gate.v"
-`include "../lib/xor_gate.v"
-`include "../lib/mux.v"
-`include "../lib/not_gate.v"
-`include "and6_gate.v"
-`include "or3_gate.v"
-`include "and3_gate.v"
+`include "lib/and_gate.v"
+`include "lib/or_gate.v"
+`include "lib/xor_gate.v"
+`include "lib/mux.v"
+`include "lib/not_gate.v"
+`include "src/and6_gate.v"
+`include "src/or3_gate.v"
+`include "src/and3_gate.v"
 
 module main_control(Opcode, Zero, AluResMsb, nPC_sel, RegWr, RegDst, ExtOp, AluSrc, AluOp, MemWr, MemtoReg, Branch);
 	//inputs

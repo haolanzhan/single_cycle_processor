@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
 
-`include "../lib/dff.v"
-`include "../lib/mux.v"
+`include "lib/dff.v"
+`include "lib/mux.v"
 
 // neg-edged 32-bit register
 module register(clk, enable, d, q);

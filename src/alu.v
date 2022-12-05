@@ -1,13 +1,13 @@
 `timescale 1ns/10ps
 
-`include "../lib/and_gate.v"
-`include "../lib/or_gate.v"
-`include "../lib/xor_gate.v"
-`include "../lib/mux.v"
-`include "../lib/not_gate.v"
-`include "../lib/mux_32.v"
+`include "lib/and_gate.v"
+`include "lib/or_gate.v"
+`include "lib/xor_gate.v"
+`include "lib/mux.v"
+`include "lib/not_gate.v"
+`include "lib/mux_32.v"
 
-`include "mux_32_32.v"
+`include "src/mux_32_32.v"
 
 
 //================================================
