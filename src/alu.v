@@ -1,11 +1,14 @@
 `timescale 1ns/10ps
 
-`include "lib/and_gate.v"
-`include "lib/or_gate.v"
-`include "lib/xor_gate.v"
-`include "lib/mux.v"
-`include "lib/not_gate.v"
-`include "lib/mux_32.v"
+`include "../lib/and_gate.v"
+`include "../lib/or_gate.v"
+`include "../lib/xor_gate.v"
+`include "../lib/mux.v"
+`include "../lib/not_gate.v"
+`include "../lib/mux_32.v"
+
+`include "mux_32_32.v"
+
 
 //================================================
 // Conventional ALU: 
@@ -350,22 +353,5 @@ module or_4(A, out);
 
 	or_gate or3(or0_out, or1_out, out);
 
-
-endmodule
-
-// 32-bit mux 
-module full_mux(sel, A, B, out);
-	input 			sel;
-	input	[31:0] 	A;
-	input	[31:0] 	B;
-	output	[31:0] 	out;
-
-	genvar i;
-
-	generate
-		for (i = 0; i < 32; i = i + 1) begin
-			mux mux0 (sel, A[i], B[i], out[i]);
-		end
-	endgenerate
 
 endmodule
