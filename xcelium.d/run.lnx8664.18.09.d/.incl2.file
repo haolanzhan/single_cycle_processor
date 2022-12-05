@@ -8,7 +8,7 @@ lib/and_gate.v
 /home/kph3798/ce361/single_cycle_processor/lib/and_gate.v
 lib/or_gate.v
 /home/kph3798/ce361/single_cycle_processor/lib/or_gate.v
-lib/dff.v
-/home/kph3798/ce361/single_cycle_processor/lib/dff.v
+lib/dffr.v
+/home/kph3798/ce361/single_cycle_processor/lib/dffr.v
 lib/sram.v
 /home/kph3798/ce361/single_cycle_processor/lib/sram.v
