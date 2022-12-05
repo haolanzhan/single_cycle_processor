@@ -5,7 +5,7 @@
 `include "src/alu_control.v"
 `include "src/datapath.v"
 
-module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
+module processor (clk, start_up, instruction, new_pc_out, busW, alu_result, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, shiftctr, ALUctr, AluOp);
   	parameter program1 = ""; //program
 	input clk, start_up;
 
@@ -13,8 +13,8 @@ module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
 	wire nPC_sel, Branch;
 
 	//Control signals for datapath (control unit->datapath)
-	wire RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg;
-	wire [3:0] ALUctr;
+	output RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, shiftctr;
+	output [3:0] ALUctr;
 
 	//feedback signals for control path (datapath->control unit)
 	wire zero, msb;
@@ -23,7 +23,7 @@ module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
 	output [31:0] instruction; 
 
 	//signals for alu control
-	wire ALUop;
+	output [1:0] AluOp;
 
 	////////outputs for testing
 	output [31:0] new_pc_out, busW, alu_result;
@@ -36,8 +36,8 @@ module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
 	//instantiate control unit (in: Instruction ... msb; out: nPC_sel ... Branch)
 	main_control ctrl(/*Opcode*/instruction[31:26], zero, msb, nPC_sel, RegWr, RegDst, ExtOp, AluSrc, AluOp, MemWr, MemtoReg, Branch);
 	//(in: Aluop, Instruction; out: ALUctr)
-	alu_control aluctrl(AluOp, /*func*/instruction[5:0], ALUctr);
+	alu_control aluctrl(AluOp, /*func*/instruction[5:0], ALUctr, shiftctr);
 
 	//instantiate datapath (in: clk ... ALUctr; out: zero, msb)
-	datapath #(.file(program1)) dpath (clk, instruction, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr, zero, msb, busW, alu_result);
+	datapath #(.file(program1)) dpath (clk, instruction, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr, shiftctr, zero, msb, busW, alu_result);
 endmodule
