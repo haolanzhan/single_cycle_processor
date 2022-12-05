@@ -2,6 +2,7 @@
 
 `include "../lib/mux_n.v"
 `include "../lib/syncram.v"
+`include "../lib/not_gate_32.v"
 
 `include "alu.v"
 `include "ext_16_32.v"
@@ -73,7 +74,9 @@ module datapath (
     assign mem_mux_ctrl[0] = mem2reg;
     mux_n #(.n(32)) mem_reg_mux (mem_mux_ctrl, alu_result, mem_data_out, write_data_reg);
 
-    assign regout = read_data_1;
-    assign write = mem_data_out;
+ 
+
+    assign write = write_data_reg;
+    assign regout = alu_result;
     
 endmodule

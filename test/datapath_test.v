@@ -24,7 +24,7 @@ module datapath_test;
 			$display("--------------------------------------------");
 			$display("Datapath Test");
 
-            clk = 1;
+            clk = 0;
             
             inst = 32'b00100000000001010000000000000001;
             regwrite = 1;
@@ -124,7 +124,7 @@ module datapath_test;
             #10
             $display("LOAD ============================");
             
-            inst = 32'b10001100010001000000000000101000;
+            inst = 32'b10001100010000100000000000100000;
             regwrite = 1;
             regdst = 0;
             extop = 1;
