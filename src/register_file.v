@@ -16,7 +16,7 @@ module register_file(clk, regwr, rd, ra, rb, data,
     output  [31:0]  outa, outb;     // output lines
 
     wire    [31:0]  mux_wire[31:0]; // wires for read outputs
-    output  [31:0]  decode_out;     // 32 bit output from decoder
+    wire    [31:0]  decode_out;     // 32 bit output from decoder
     wire    [31:0]  enable;         // Enable signal ofr 32 registers
 
     genvar i;

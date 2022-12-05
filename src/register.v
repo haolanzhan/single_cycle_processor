@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-`include "../lib/dff.v"
+`include "../lib/dffr.v"
 `include "../lib/mux.v"
 
 // neg-edged 32-bit register
@@ -29,6 +29,6 @@ module bit_register(clk, enable, d, q);
 
     // select between new (input) and old data (output)
     mux dmux (enable, q, d, d_in);
-    dff dff_gen (clk, d_in, q);
+    dffr dff_gen (clk, d_in, q);
 
 endmodule
