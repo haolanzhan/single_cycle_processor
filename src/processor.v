@@ -13,7 +13,8 @@ module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
 	wire nPC_sel, Branch;
 
 	//Control signals for datapath (control unit->datapath)
-	wire RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, ALUctr;
+	wire RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg;
+	wire [3:0] ALUctr;
 
 	//feedback signals for control path (datapath->control unit)
 	wire zero, msb;
@@ -24,8 +25,10 @@ module processor (clk, start_up, instruction, new_pc_out, busW, alu_result);
 	//signals for alu control
 	wire ALUop;
 
-	//outputs for testing
+	////////outputs for testing
 	output [31:0] new_pc_out, busW, alu_result;
+	//assign busW = 32'hffffffff;
+	/////////////////
 
 	//instantiate instruction fetch (in: d ... nPC_sel; out: instruction)
 	instruction_fetch #(.program2(program1)) ifetch (start_up, clk, nPC_sel, instruction, new_pc_out); 
