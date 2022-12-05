@@ -4,7 +4,7 @@
 `include "lib/sram.v"
 `include "lib/sign_ext_30.v"
 
-module instruction_fetch(start_up, clk, npc_sel, instruction); 
+module instruction_fetch(start_up, clk, npc_sel, instruction, pc_d, pc_q, new_pc_out); 
     parameter program2 = "";
     input start_up, clk, npc_sel;
     output [31:0] instruction;
@@ -18,6 +18,14 @@ module instruction_fetch(start_up, clk, npc_sel, instruction);
 
     wire [31:0] d; // pc d
     wire [31:0] q; // pc q
+
+    ///testing
+    output [31:0] pc_d; 
+    assign pc_d = d;
+    output [31:0] pc_q; 
+    assign pc_q = q;
+    output [31:0] new_pc_out; 
+    assign new_pc_out = new_pc;
 
     wire [29:0] is_startup;
     assign is_startup[29:1] = 29'b0;
@@ -49,6 +57,7 @@ module instruction_fetch(start_up, clk, npc_sel, instruction);
     sram #(.mem_file(program2)) memory(1'b1, 1'b1, 1'b0, q[31:0], 32'b0, instruction);
     
     assign imm16 = instruction[15:0];
+
 
 
 endmodule

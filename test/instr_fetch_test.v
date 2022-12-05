@@ -7,12 +7,12 @@ module instr_fetch_test;
     reg clk;
     reg npc_sel;
 
-    wire [31:0] instruction;
+    wire [31:0] instruction, pc_d, pc_q, new_pc_out;
 
     
     always #5 clk = ~clk;
 
-    instruction_fetch #(.program2("../eecs361/bills_branch.dat")) ifu(start_up, clk, npc_sel, instruction);
+    instruction_fetch #(.program2("eecs361/data/bills_branch.dat")) ifu(start_up, clk, npc_sel, instruction, pc_d, pc_q, new_pc_out);
 
     initial begin
         clk = 0;
