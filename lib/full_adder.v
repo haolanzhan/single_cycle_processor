@@ -20,12 +20,5 @@ module full_adder(a, b, cin, cout, s);
 
     or_gate or_2 (w4, w5, cout);
     or_gate or_1 (w2, w3, w5);
-   
-
 
 endmodule
-
-
-
-
-    

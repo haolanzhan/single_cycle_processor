@@ -1,105 +1,104 @@
 xrun(64): 18.09-s011: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	18.09-s011: Started on Dec 04, 2022 at 20:17:21 CST
+TOOL:	xrun(64)	18.09-s011: Started on Dec 04, 2022 at 23:15:03 CST
 xrun
 	-64bit
 	-gui
 	-access r
-	instruction_fetch.v
-	instr_fetch_test.v
-Recompiling... reason: file './instr_fetch_test.v' is newer than expected.
-	expected: Sun Dec  4 20:16:17 2022
-	actual:   Sun Dec  4 20:17:15 2022
-file: instruction_fetch.v
+	src/instruction_fetch.v
+	test/instr_fetch_test.v
+Recompiling... reason: file './lib/mux_n.v' is newer than expected.
+	expected: Fri Dec  2 20:38:17 2022
+	actual:   Sun Dec  4 15:46:40 2022
+file: src/instruction_fetch.v
         1'h2 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,44|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 44, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 44, file: src/instruction_fetch.v line 4)
         1'h3 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,45|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 45, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 45, file: src/instruction_fetch.v line 4)
         1'h4 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,46|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 46, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 46, file: src/instruction_fetch.v line 4)
         1'h5 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,47|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 47, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 47, file: src/instruction_fetch.v line 4)
         1'h6 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,48|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 48, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 48, file: src/instruction_fetch.v line 4)
         1'h7 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,49|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 49, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 49, file: src/instruction_fetch.v line 4)
         1'h8 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,50|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 50, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 50, file: src/instruction_fetch.v line 4)
         1'h9 : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,51|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 51, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 51, file: src/instruction_fetch.v line 4)
         1'ha : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,52|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 52, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 52, file: src/instruction_fetch.v line 4)
         1'hb : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,53|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 53, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 53, file: src/instruction_fetch.v line 4)
         1'hc : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,54|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 54, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 54, file: src/instruction_fetch.v line 4)
         1'hd : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,55|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 55, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 55, file: src/instruction_fetch.v line 4)
         1'he : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,56|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 56, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 56, file: src/instruction_fetch.v line 4)
         1'hf : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,57|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 57, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 57, file: src/instruction_fetch.v line 4)
         1'hA : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,58|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 58, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 58, file: src/instruction_fetch.v line 4)
         1'hB : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,59|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 59, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 59, file: src/instruction_fetch.v line 4)
         1'hC : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,60|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 60, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 60, file: src/instruction_fetch.v line 4)
         1'hD : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,61|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 61, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 61, file: src/instruction_fetch.v line 4)
         1'hE : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,62|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 62, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 62, file: src/instruction_fetch.v line 4)
         1'hF : hex = 1;
            |
 xmvlog: *W,INTOVF (lib/sram.v,63|11): bit overflow during conversion from text [2.5(IEEE)] (1 bits).
-(`include file: lib/sram.v line 63, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 63, file: src/instruction_fetch.v line 4)
         initiate();
                  |
 xmvlog: *W,TMTPAR (lib/sram.v,171|17): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
-(`include file: lib/sram.v line 171, file: instruction_fetch.v line 4)
+(`include file: lib/sram.v line 171, file: src/instruction_fetch.v line 4)
         checkRAM();
                  |
 xmvlog: *W,TMTPAR (lib/sram.v,176|17): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
-(`include file: lib/sram.v line 176, file: instruction_fetch.v line 4)
-file: instr_fetch_test.v
-	module worklib.instr_fetch_test:v
+(`include file: lib/sram.v line 176, file: src/instruction_fetch.v line 4)
+	module worklib.instruction_fetch:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -108,21 +107,23 @@ file: instr_fetch_test.v
 		instr_fetch_test
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.instr_fetch_test:v <0x03cf20fb>
-			streams:   3, words:  3105
+		worklib.instr_fetch_test:v <0x6e27a8d9>
+			streams:   3, words:  2804
+		worklib.instruction_fetch:v <0x26ef34cc>
+			streams:   7, words:  1435
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
 		Modules:                278      11
 		Resolved nets:            0       1
-		Registers:               61      30
+		Registers:               60      29
 		Scalar wires:           252       -
 		Expanded wires:          66       5
-		Vectored wires:          17       -
+		Vectored wires:          15       -
 		Always blocks:           35       4
 		Initial blocks:           8       8
-		Cont. assignments:        7      18
+		Cont. assignments:        7      17
 		Pseudo assignments:       4       4
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.instr_fetch_test:v
@@ -133,7 +134,7 @@ xcelium>
 xcelium> source /vol/cadence2018/XCELIUM1809/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm instr_fetch_test.clk instr_fetch_test.imm16 instr_fetch_test.instruction instr_fetch_test.npc_sel instr_fetch_test.output_pc instr_fetch_test.pc instr_fetch_test.start_up
+xcelium> probe -create -shm instr_fetch_test.clk instr_fetch_test.instruction instr_fetch_test.npc_sel instr_fetch_test.pc instr_fetch_test.start_up
 Created probe 1
 xcelium> run
 Now initializing sram
@@ -286,10 +287,22 @@ READ Addr FOUND!: 00400020
 Writing to dout: 20050001
 READ Addr FOUND!: 00400024
 Writing to dout: 20060064
-READ Addr FOUND!: 00400048
-Writing to dout: 20420004
+READ Addr FOUND!: 00400028
+Writing to dout: 20021000
 READ Addr FOUND!: 0040002c
 Writing to dout: 00421400
-Simulation complete via $finish(1) at time 80 NS + 0
-./instr_fetch_test.v:42         $finish;
-xcelium> 
+READ Addr FOUND!: 00400030
+Writing to dout: 20470028
+READ Addr FOUND!: 00400034
+Writing to dout: 8c430000
+READ Addr FOUND!: 00400038
+Writing to dout: 00c3202a
+READ Addr FOUND!: 0040003c
+Writing to dout: 10850002
+READ Addr FOUND!: 00400048
+Writing to dout: 20420004
+Simulation complete via $finish(1) at time 95 NS + 0
+./test/instr_fetch_test.v:42         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	18.09-s011: Exiting on Dec 04, 2022 at 23:15:34 CST  (total: 00:00:31)

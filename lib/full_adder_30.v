@@ -21,18 +21,3 @@ module full_adder_30(a, b, c, s);
     
 
 endmodule
-
-
-
-// // Generate first single bit ALU since less input is different
-// 	bit_alu balu (A[0], B[0], ctrl[2], ctrl[2], set, ctrl, res[0], carry[0]);
-
-// 	// Generate middle 30 single bit ALU
-// 	generate
-// 		for (i = 1; i < 31; i = i + 1) begin 
-// 			bit_alu balu_gen (A[i], B[i], ctrl[2], carry[i - 1], 1'b0, ctrl, res[i], carry[i]);
-// 		end
-// 	endgenerate
-
-// 	// Generate MSB ALU
-// 	msb_alu msbalu (A[31], B[31], ctrl[2], carry[30], 1'b0, ctrl, res[31], cout, over, set);

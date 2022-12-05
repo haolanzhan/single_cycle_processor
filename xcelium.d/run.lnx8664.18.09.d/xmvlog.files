@@ -2,5 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/kph3798/ce361/single_cycle_processor/instruction_fetch.v
-/home/kph3798/ce361/single_cycle_processor/instr_fetch_test.v
+/home/kph3798/ce361/single_cycle_processor/src/instruction_fetch.v
+/home/kph3798/ce361/single_cycle_processor/test/instr_fetch_test.v

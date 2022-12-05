@@ -5,8 +5,8 @@
 -XLMODE
 ./xcelium.d/run.lnx8664.18.09.d
 -RUNMODE
-instruction_fetch.v
-instr_fetch_test.v
+src/instruction_fetch.v
+test/instr_fetch_test.v
 -CDSLIB
 ./xcelium.d/run.lnx8664.18.09.d/cdsrun.lib
 -HDLVAR

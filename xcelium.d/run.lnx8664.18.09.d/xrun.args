@@ -6,5 +6,5 @@
 -gui
 -access
 r
-instruction_fetch.v
-instr_fetch_test.v
+src/instruction_fetch.v
+test/instr_fetch_test.v
