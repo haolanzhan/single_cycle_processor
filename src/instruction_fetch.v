@@ -1,6 +1,7 @@
 `timescale 1ns/10ps
 `include "lib/full_adder_30.v"
 `include "lib/dffr.v"
+`include "lib/dff.v"
 `include "lib/sram.v"
 `include "lib/sign_ext_30.v"
 

@@ -23,13 +23,13 @@ module processor_test;
 		begin
 			$display("--------------------------------------------");
 			$display("Reseting to initial PC value");
-			clk_tb = 0;
+			clk_tb = 1;
         	start_up_tb = 1;
-			#15;
+			#20;
 
 			$display("Beginning program, running for at least 10 cycles");
 			start_up_tb = 0;
 			
-            #200 $finish;
+            #600 $finish;
 	end 
 endmodule
