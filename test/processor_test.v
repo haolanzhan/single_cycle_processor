@@ -17,7 +17,7 @@ module processor_test;
 	 
 	always #5 clk_tb = ~clk_tb;
 
-	processor #(.program1("eecs361/data/unsigned_sum.dat")) better_than_mips (clk_tb, start_up_tb, instruction, new_pc_out, busW, alu_result, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, shiftctr, ALUctr, ALUop);
+	processor #(.program1("data/bills_branch.dat")) better_than_mips (clk_tb, start_up_tb, instruction, new_pc_out, busW, alu_result, RegWr, RegDst, ExtOp, AluSrc, MemWr, MemtoReg, shiftctr, ALUctr, ALUop);
 
 	initial 
 		begin
@@ -30,6 +30,6 @@ module processor_test;
 			$display("Beginning program, running for at least 10 cycles");
 			start_up_tb = 0;
 			
-            #600 $finish;
+            #1200 $finish;
 	end 
 endmodule
