@@ -4,11 +4,12 @@ module alu_control_test;
 	reg [1:0] ALUop_tb;
 	reg [5:0] func_tb;
 	wire [3:0] ALUctr_tb;
+	wire SllFlag_tb;
 
-    initial $monitor ("ALUop_tb: %b func_tb: %b ALUctr_tb: %b", 
-                    ALUop_tb, func_tb, ALUctr_tb);
+    initial $monitor ("ALUop_tb: %b func_tb: %b ALUctr_tb: %b SllFlag_tb: %b", 
+                    ALUop_tb, func_tb, ALUctr_tb, SllFlag_tb);
 	 
-	alu_control dut(ALUop_tb, func_tb, ALUctr_tb);
+	alu_control dut(ALUop_tb, func_tb, ALUctr_tb, SllFlag_tb);
 
 	initial 
 		begin
