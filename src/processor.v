@@ -28,7 +28,7 @@ module processor (clk, start_up, instruction, pc_d, pc_q, busW, aluresult, new_p
     output  [31:0]  busW, aluresult, pc_d, pc_q, new_pc_out;
 
 	//instantiate instruction fetch (in: d ... nPC_sel; out: instruction)
-	assign nPC_sel = 1'b1;
+	assign nPC_sel = 1'b0;
 	instruction_fetch #(.program2(program1)) ifetch (start_up, clk, nPC_sel, instruction, pc_d, pc_q, new_pc_out); 
 
 	//instantiate control unit (in: Instruction ... msb; out: nPC_sel ... Branch)

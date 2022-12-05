@@ -7,9 +7,6 @@
 `include "lib/not_gate.v"
 `include "lib/mux_32.v"
 
-`include "src/mux_32_32.v"
-
-
 //================================================
 // Conventional ALU: 
 // Operation	code

@@ -4,7 +4,7 @@
 `include "lib/sram.v"
 `include "lib/sign_ext_30.v"
 
-module instruction_fetch(start_up, clk, npc_sel, instruction, pc_d, pc_q, new_pc_out); 
+module instruction_fetch(start_up, clk, npc_sel, instruction, new_pc_tb, d_tb, q_tb, mux_output_tb); 
     parameter program2 = "";
     input start_up, clk, npc_sel;
     output [31:0] instruction;
@@ -19,21 +19,29 @@ module instruction_fetch(start_up, clk, npc_sel, instruction, pc_d, pc_q, new_pc
     wire [31:0] d; // pc d
     wire [31:0] q; // pc q
 
-    ///testing
-    output [31:0] pc_d; 
-    assign pc_d = d;
-    output [31:0] pc_q; 
-    assign pc_q = q;
-    output [31:0] new_pc_out; 
-    assign new_pc_out = new_pc;
-
     wire [29:0] is_startup;
-    assign is_startup[29:1] = 29'b0;
+    assign is_startup[29:1] = 29'b00000000000000000000000000000;
     assign is_startup[0] = start_up;
 
     assign d[1:0]         = 2'b00;
     assign q[1:0]         = 2'b00;
     assign new_pc[1:0]    = 2'b00;
+
+
+
+    ///testing
+    output [31:0] new_pc_tb; 
+    assign new_pc_tb = new_pc;
+    output [31:0] d_tb; 
+    assign d_tb = d;
+    output [31:0] q_tb; 
+    assign q_tb = q;
+    output [29:0] mux_output_tb;
+    assign mux_output_tb = mux_output;
+
+
+
+
     genvar i;
     generate
         for (i = 2; i < 32; i = i + 1) begin
@@ -46,15 +54,17 @@ module instruction_fetch(start_up, clk, npc_sel, instruction, pc_d, pc_q, new_pc
                                    30'b000000000100000000000000001000, 
                                    d[31:2]);
 
-    assign pc_selector[29:1]  = 30'h00000000;
+    assign pc_selector[29:1]  = 29'b00000000000000000000000000000;
     assign pc_selector[0]     = npc_sel;
 
     sign_ext_30 ext(imm16, ext_imm16);
 
-    mux_n #(.n(30)) seq_or_branch(pc_selector, 30'h00000000, ext_imm16, mux_output[29:0]);
+    mux_n #(.n(30)) seq_or_branch(pc_selector, 30'b000000000000000000000000000000, ext_imm16, mux_output[29:0]);
 
+    
     full_adder_30 add(q[31:2], mux_output[29:0], 1'b1, new_pc[31:2]);
-    sram #(.mem_file(program2)) memory(1'b1, 1'b1, 1'b0, q[31:0], 32'b0, instruction);
+
+    sram #(.mem_file(program2)) memory(1'b1, 1'b1, 1'b0, q[31:0], 8'h00000000, instruction);
     
     assign imm16 = instruction[15:0];
 
