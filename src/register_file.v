@@ -9,20 +9,20 @@
 
 // 32, 32-bit registers
 module register_file(clk, regwr, rd, ra, rb, data,
-                    outa, outb, decode_out);
+                    outa, outb);
     input           clk, regwr;     // clock and write control
     input   [4:0]   rd, ra, rb;     // register values (write, read, read)
     input   [31:0]  data;          // data to write
     output  [31:0]  outa, outb;     // output lines
 
     wire    [31:0]  mux_wire[31:0]; // wires for read outputs
-    output    [31:0]  decode_out;     // 32 bit output from decoder
+    output  [31:0]  decode_out;     // 32 bit output from decoder
     wire    [31:0]  enable;         // Enable signal ofr 32 registers
 
     genvar i;
 
     // Decode write reigster 
-    dec_n reg_dec (rd, decode_out);
+    dec_n #(.n(5)) reg_dec (rd, decode_out);
 
     // Generate 32 registers and their corresponding enable logic
     generate
